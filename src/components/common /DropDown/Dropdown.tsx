@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./Dropdown.css";
-import { FcDown } from "react-icons/fc";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 export type DropdownOption = {
