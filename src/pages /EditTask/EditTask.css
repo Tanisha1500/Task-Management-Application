@@ -1,0 +1,54 @@
+.status-field {
+    margin-top: 1rem;
+  }
+  
+  .status-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+  
+  .status-select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 0.875rem;
+    outline: none;
+  }
+  
+
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .status-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  
+  .status-option:hover {
+    background: #f1f5f9;
+  }
+  
+  
+  .status-dot.pending {
+    background-color: gray;
+  }
+  
+  .status-dot.in-progress {
+    background-color: orange;
+  }
+  
+  .status-dot.completed {
+    background-color: green;
+  }
+  

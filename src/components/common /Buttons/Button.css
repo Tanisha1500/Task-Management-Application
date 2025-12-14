@@ -1,0 +1,31 @@
+.custom-button {
+    display: inline-flex;        /* allows flex alignment inside button */
+  align-items: center;         /* vertical centering */
+  justify-content: center; 
+  box-shadow: 0 4px 10px rgba(3,77,162,0.3); /* blue tint for primary button */
+
+ 
+}
+
+
+
+.custom-button.primary{
+    background: #034DA2;
+    color:white;
+    font-size: 0.75rem;
+    font-weight: 300;
+    width: 30%;
+    text-align: center;
+
+}
+
+
+
+.custom-button.secondary {
+    color:#034DA2;
+    font-weight: 300;
+    background:white;
+    outline: 1px solid#034DA2;
+    font-size: 0.75rem;
+    width: 30%;
+}

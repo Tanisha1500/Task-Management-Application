@@ -1,0 +1,105 @@
+.dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: backdropFadeIn 0.3s ease-out
+  }
+  
+  .dialog-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    animation: fadeIn 0.2s ease;
+
+    animation: dialogEnter 0.35s ease-out;
+  }
+  
+  .dialog-box button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background: #034da2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .dialog-backdrop.closing {
+    animation: backdropFadeOut 0.3s ease-in forwards;
+  }
+
+  .dialog-box.closing {
+    animation: dialogExit 0.3s ease-in forwards;
+  }
+
+  .dialog-actions {
+
+    display:flex;
+    flex-direction: row;
+    /* padding: 3rem; */
+    justify-content: space-between;
+
+  }
+
+
+  .dialog-actions-single {
+
+    display:flex;
+    flex-direction: row;
+    /* padding: 3rem; */
+    justify-content: center;
+
+  }
+  
+  
+
+
+
+  @keyframes backdropFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes dialogEnter {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+
+  @keyframes backdropFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes dialogExit {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+    }
+  }
+  
+  
