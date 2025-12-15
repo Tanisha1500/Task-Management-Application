@@ -16,7 +16,7 @@ interface Props {
 export function HomePage({ tasks, dispatch }: Props) {
 
   const navigate = useNavigate();
-  
+
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("all");
 
@@ -78,12 +78,9 @@ export function HomePage({ tasks, dispatch }: Props) {
           )}
         </>
       )}
-
-
       <button className="add-button" onClick={handleAddTask}>
         <IoMdAdd size={36} color="white" />
       </button>
-
     </div>
   )
 }

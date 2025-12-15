@@ -32,7 +32,7 @@ export default function Dropdown({
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
-  
+
 
   return (
     <div className="status-dropdown">
@@ -53,7 +53,7 @@ export default function Dropdown({
           <span className="placeholder">{placeholder}</span>
         )}
 
-        <span className="arrow"><IoMdArrowDropdown/></span>
+        <span className="arrow"><IoMdArrowDropdown /></span>
       </div>
 
       {/* Options */}

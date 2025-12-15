@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import "./Dialog.css";
 import { Button } from "../Buttons/Button";
-
 interface DialogProps {
   open: boolean;
   message: string;
   primaryAction?: () => void;
-  secondaryAction:()=>void;
-  primaryLabel?:string;
-  secondaryLabel:string;
+  secondaryAction: () => void;
+  primaryLabel?: string;
+  secondaryLabel: string;
 }
 
-export function Dialog({ open, message, primaryAction, secondaryAction,primaryLabel,secondaryLabel }: DialogProps) {
+export function Dialog({ open, message, primaryAction, secondaryAction, primaryLabel, secondaryLabel }: DialogProps) {
   const [visible, setVisible] = useState(open);
   const [closing, setClosing] = useState(false);
 
@@ -29,10 +28,8 @@ export function Dialog({ open, message, primaryAction, secondaryAction,primaryLa
       setVisible(false);
       setClosing(false);
       secondaryAction?.();
-    }, 300); 
+    }, 300);
   };
-
-  
 
   const handlePrimary = () => {
     primaryAction?.();

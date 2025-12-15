@@ -7,15 +7,11 @@
     margin:auto;
     border-radius:10px;
     height:5vh;
-    box-shadow: 0 4px 10px rgba(3,77,162,0.3); 
-
-    
-    
+    box-shadow: 0 4px 10px rgba(3,77,162,0.3);  
 }
 
 .search-box-body {
-    padding: 2rem 2rem 0 2rem;
-    
+    padding: 2rem 2rem 0 2rem;   
 }
 
 .search-button {

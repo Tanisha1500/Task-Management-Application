@@ -9,11 +9,9 @@
     display: flex;
     flex-direction: column;
     padding: 3rem;
-
 }
 
 .title {
-    /* padding: 1rem; */
     margin-bottom: 1.25rem;
     height: 5vh;
     text-align: left;
@@ -23,7 +21,6 @@
     align-items: center;
     display:flex;
     box-shadow: 0 4px 10px rgba(3,77,162,0.3); 
-
 }
 
 .description {
@@ -40,7 +37,6 @@
 .action-button {
     display:flex;
     flex-direction: row;
-    /* padding: 3rem; */
     justify-content: space-between;
 }
 

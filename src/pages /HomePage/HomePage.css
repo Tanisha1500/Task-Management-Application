@@ -74,14 +74,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
   }
   
-  /* Title */
   .task-title {
     font-size: 14px;
     font-weight: 800;
-    /* margin:1rem; */
     color: #034DA2;
   }
 
@@ -89,13 +86,13 @@
   .task-title-container {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* space between avatar and title */
+    gap: 0.5rem; 
   }
   
   .task-avatar {
     width: 32px;
     height: 32px;
-    background-color: white; /* nice blue */
+    background-color: white;
     color: #034DA2;
     font-weight: 600;
     border:solid 1px #034DA2;
@@ -108,16 +105,13 @@
     margin-left: 0.5rem;
   }
 
-  /* Strike-through title if completed */
 .completed-title {
   text-decoration: line-through;
-  color: #6b7280; /* optional: grayish color for completed */
+  color: #6b7280; 
 }
-
 
 .completed-dot {
   background-color: green !important;
-
 }
 
 .filter {
@@ -127,7 +121,6 @@
   align-items: center;
 }
 
-  /* Status */
   .task-status {
     display: flex;
     align-items: center;
@@ -142,7 +135,6 @@
     border-radius: 50%;
   }
   
-  /* Status colors */
   .in-progress {
     background-color: orange;
   }
@@ -154,8 +146,7 @@
   .pending {
     background-color: gray;
   }
-
-  
+ 
   .task-description {
     color: #4b5563;
     font-size: 12px;
@@ -166,7 +157,6 @@
     color: black;
   }
   
-  /* Footer */
   .task-date {
     font-size: 10px;
     color: #6b7280;
@@ -174,7 +164,6 @@
     font-weight: 100;
   }
   
-  /* Actions */
   .task-actions {
     display: flex;
     gap: 10px;

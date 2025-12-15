@@ -8,24 +8,24 @@ import { taskReducer } from "./reducer/taskReducer";
 import type { Task } from "./types/task";
 import { EditTask } from "./pages /EditTask/EditTask";
 
-const initialState:Task[]=[]
+const initialState: Task[] = []
 function App() {
-  const [tasks, dispatch]= useReducer(taskReducer, initialState, ()=>{
-    const savedTasks=localStorage.getItem("tasks");
-    return savedTasks?JSON.parse(savedTasks):[];
+  const [tasks, dispatch] = useReducer(taskReducer, initialState, () => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
   })
 
-  useEffect(()=>{
-    localStorage.setItem("tasks",JSON.stringify(tasks))
-  },[tasks]);
-  
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks]);
+
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage tasks={tasks} dispatch={dispatch} /> } /> {/* Home page */}
-        <Route path="/add" element={<AddTask dispatch={dispatch}/>} /> {/* AddTask page */}
-        <Route path="/edit-task/:id" element={<EditTask tasks={tasks} dispatch={dispatch} />}/> 
+        <Route path="/" element={<HomePage tasks={tasks} dispatch={dispatch} />} /> {/* Home page */}
+        <Route path="/add" element={<AddTask dispatch={dispatch} />} /> {/* AddTask page */}
+        <Route path="/edit-task/:id" element={<EditTask tasks={tasks} dispatch={dispatch} />} />
       </Routes>
     </Router>
   );

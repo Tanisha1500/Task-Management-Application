@@ -9,101 +9,96 @@ import './EditTask.css'
 import Dropdown from "../../components/common /DropDown/Dropdown";
 import { Dialog } from "../../components/common /Dialog /Dialog";
 
-interface EditTaskProps{
-    tasks: Task[];
-    dispatch:React.Dispatch<Action>;
+interface EditTaskProps {
+  tasks: Task[];
+  dispatch: React.Dispatch<Action>;
 }
-export const EditTask=({tasks,dispatch}: EditTaskProps)=>{
+export const EditTask = ({ tasks, dispatch }: EditTaskProps) => {
 
-    const navigate=useNavigate();
-    const {id}= useParams<{id:string}>();
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
 
-    console.log(id);
-    
-    const taskToEdit= tasks.find((t)=>t.id===id)
+  console.log(id);
 
-    const [title, setTitle] = useState<string>(String(taskToEdit?.title ?? ""));
-    const [description, setDescription] = useState<string>(String(taskToEdit?.description || ""));
-    const [status, setStatus] = useState(
-        STATUS_OPTIONS.find(
-          (opt) => opt.value === taskToEdit?.status
-        ) || STATUS_OPTIONS[0]
-      );
-    const [dialog,setDialog]=useState(false);
-      
-   
+  const taskToEdit = tasks.find((t) => t.id === id)
 
-    const handleBack=()=>{
-        navigate("/")
-      }
+  const [title, setTitle] = useState<string>(String(taskToEdit?.title ?? ""));
+  const [description, setDescription] = useState<string>(String(taskToEdit?.description || ""));
+  const [status, setStatus] = useState(
+    STATUS_OPTIONS.find(
+      (opt) => opt.value === taskToEdit?.status
+    ) || STATUS_OPTIONS[0]
+  );
+  const [dialog, setDialog] = useState(false);
 
-      const handleEditTask = () => {
-        if (!taskToEdit) return;
 
-      
-        dispatch({
-            type: "UPDATE_TASK",
-            payload: {
-              id: taskToEdit.id,
-              updates: {
-                title,
-                description,
-                status: status.value as TaskStatus,
-              },
-            },
-          });
 
-          setDialog(true);
-      
-        
-      };
-      
+  const handleBack = () => {
+    navigate("/")
+  }
 
-      console.log(title);
+  const handleEditTask = () => {
+    if (!taskToEdit) return;
 
-    return (
-        <>
-        <div className="add-task-container">
+
+    dispatch({
+      type: "UPDATE_TASK",
+      payload: {
+        id: taskToEdit.id,
+        updates: {
+          title,
+          description,
+          status: status.value as TaskStatus,
+        },
+      },
+    });
+
+    setDialog(true);
+
+
+  };
+
+  return (
+    <>
+      <div className="add-task-container">
 
         {/*Header */}
-        <div className="header-container"> 
-        <IoMdArrowRoundBack className="back-arrow" onClick={handleBack}/>
-        {/* <button className="back-button"></button> */}
-        <h2 className="header-title"> Edit Task </h2>
+        <div className="header-container">
+          <IoMdArrowRoundBack className="back-arrow" onClick={handleBack} />
+          {/* <button className="back-button"></button> */}
+          <h2 className="header-title"> Edit Task </h2>
         </div>
 
         {/*Body */}
         <div className="add-task-body">
-           
-            <textarea value={title} placeholder="Enter the title" className="title" onChange={(e)=>setTitle(e.target.value)  }></textarea>
-            <textarea  value={description} placeholder="Enter the description" className="description" onChange={(e)=>setDescription(e.target.value)}></textarea>
-            <Dropdown options={STATUS_OPTIONS} value={status} onChange={(selectedStatus) => setStatus(selectedStatus)}/>
 
-        
-        {/*Button area */}
-        <div className="action-button">
+          <textarea value={title} placeholder="Enter the title" className="title" onChange={(e) => setTitle(e.target.value)}></textarea>
+          <textarea value={description} placeholder="Enter the description" className="description" onChange={(e) => setDescription(e.target.value)}></textarea>
+          <Dropdown options={STATUS_OPTIONS} value={status} onChange={(selectedStatus) => setStatus(selectedStatus)} />
 
-      <Button variant="secondary" onClick={handleBack} >Cancel</Button>
-      <Button variant="primary" onClick={handleEditTask} >UPDATE</Button>
 
+          {/*Button area */}
+          <div className="action-button">
+
+            <Button variant="secondary" onClick={handleBack} >Cancel</Button>
+            <Button variant="primary" onClick={handleEditTask} >UPDATE</Button>
+
+          </div>
+        </div>
       </div>
-        </div>
-        </div>
 
-        <Dialog
+      <Dialog
         open={dialog}
         message="You have updated the task"
         secondaryLabel="Close"
-        secondaryAction={()=>{
+        secondaryAction={() => {
           setDialog(false);
-          if(title.trim() || description.trim())
-            {
-           navigate("/")}}
-            }
+          if (title.trim() || description.trim()) {
+            navigate("/")
+          }
+        }
+        }
       />
-        </>
-    )
-    
-
-
+    </>
+  )
 }
